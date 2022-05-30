@@ -7,6 +7,10 @@ function strObjCounter(str) {
             sampObj[elem] = 1
         }
     }
+    for(let [key, entry] of Object.entries(sampObj)){
+        console.log([key, entry])
+    }
+    
 return sampObj
 }
 
