@@ -8,10 +8,13 @@ function strObjCounter(str) {
         }
     }
     for(let [key, entry] of Object.entries(sampObj)){
-        console.log([key, entry])
+        //console.log([key, entry])
     }
     
 return sampObj
 }
 
-console.log(strObjCounter('Greek'))
+//console.log(strObjCounter('Greek'))
+
+
+    console.log(['a', 'A', 'z', 'Z', '!'].sort())
