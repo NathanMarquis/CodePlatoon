@@ -10,10 +10,19 @@ class User():
         return f'>>Username: {self.username} /n>>Email: {self.email} /n>>Posts: {self.user_posts}.'
 
     def create_post(self, title, post):
+        if self.premium == False: #To limit free users to 2 posts
+            if self.post_count >= 2:
+                print('You have exceeded your maximum number of posts.')
+                return   
+            self.post_count += 1
+    
+        print(f'>>{title}<< {post}')
         User.all_user_posts.append({'Username': self.username, 'Title': title, 'Post': post})
         self.user_posts.append({'Title': title, 'Post': post})
 
     def delete_post(self):
+        if self.premium == False and self.post_count >=0: #To allow another post for free users
+            self.post_count += 1
         for idx in reversed(range(len(User.all_user_posts))): #To remove post from class variable all_user_posts
             if User.all_user_posts[idx]['Username'] == self.username:
                 print(f'Deleting last post...')
