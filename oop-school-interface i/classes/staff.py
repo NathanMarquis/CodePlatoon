@@ -6,9 +6,9 @@ class Staff(Person):
         Person.__init__(self, name, age, role, password)
         self.employee_id = employee_id
 
-    def staff_info():
-        with open("data/staff.csv", "r") as staff_file:
+    def all_staff():
+        with open("oop-school-interface i/data/staff.csv", newline='') as staff_file:
             reader = csv.DictReader(staff_file)
-            arr_students = []
+            arr_staff = []
             for row in reader:
-                arr_students.append(Staff(**row))
+                arr_staff.append(Staff(**row))
