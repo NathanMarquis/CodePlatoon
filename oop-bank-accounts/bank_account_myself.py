@@ -7,25 +7,7 @@ class Bank:
     def __str__():
         pass
 
-class Owner:
-    def __init__(self, user_id, l_name, f_name, street_address, city, state):
-        self.user_id = user_id
-        self.full_name = f"{f_name} {l_name}"
-        self.address = f"{street_address}, {city}, {state}"
 
-
-    def __str__(self):
-        return(f"{self.name}'s account.")
-
-    def all_owners():
-        own_list = []
-        path = r"C:\Users\natha\Documents\Coding\oop-bank-accounts\support\owners.csv"
-        with open(path, newline='') as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
-                own_list.append(Owner(int(row['ID']), row['L_name'], row["F_name"], row['street_address'], row['city'], row['state']))
-
-        return own_list
 
 class Account():
 
@@ -75,6 +57,28 @@ class Account():
         for account in accounts:
             if account.id == id:
                 return account
+
+
+class Owner:
+    def __init__(self, user_id, l_name, f_name, street_address, city, state):
+        self.user_id = user_id
+        self.full_name = f"{f_name} {l_name}"
+        self.address = f"{street_address}, {city}, {state}"
+
+
+    def __str__(self):
+        return(f"{self.name}'s account.")
+
+    def all_owners():
+        own_list = []
+        path = r"C:\Users\natha\Documents\Coding\oop-bank-accounts\support\owners.csv"
+        with open(path, newline='') as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                own_list.append(Owner(int(row['ID']), row['L_name'], row["F_name"], row['street_address'], row['city'], row['state']))
+
+        return own_list
+
 
 class Savings_account(Account):
     def __init__(self, id, initial_balance):
