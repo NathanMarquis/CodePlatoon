@@ -17,8 +17,15 @@ class School:
             if student.school_id == student_id:
                 return student
 
-    @staticmethod
-    def add_student(self, student_data, school_id):
-        self.student_data = student_data
-        Student.students.append(**student_data)
-        self.school_id = school_id
+    def add_student(self,student_data):
+        new_student = Student(**student_data)
+        self.students.append(new_student)
+        print(f"\nStudent:\n{new_student}\nwas sucessfully added to the School System.")
+    
+    def remove_student(self,removed_student_id):
+        for x in range(len(self.students)):
+            student = self.students[x]
+            if removed_student_id == student.school_id:
+                self.students.pop(x)
+                print(f"\nStudent:\n{student}\nwas sucessfully removed from the School System.")
+                break

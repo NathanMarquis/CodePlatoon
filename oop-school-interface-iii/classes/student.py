@@ -12,7 +12,7 @@ class Student(Person):
         return f'\n{self.name.upper()}\n---------------\nage: {self.age}\nid: {self.school_id}\n'
 
     @classmethod
-    def objects(cls):
+    def students(cls):
         students = []
         my_path = os.path.abspath(os.path.dirname(__file__))
         path = os.path.join(my_path, "../data/students.csv")
