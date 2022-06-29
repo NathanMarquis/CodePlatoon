@@ -1,0 +1,11 @@
+                                      Table "public.students"
+   Column   |          Type          | Collation | Nullable |               Default                
+------------+------------------------+-----------+----------+--------------------------------------
+ id         | integer                |           | not null | nextval('students_id_seq'::regclass)
+ first_name | character varying(255) |           | not null | 
+ last_name  | character varying(255) |           | not null | 
+ birthdate  | date                   |           | not null | 
+ address_id | integer                |           |          | 
+Indexes:
+    "students_pkey" PRIMARY KEY, btree (id)
+

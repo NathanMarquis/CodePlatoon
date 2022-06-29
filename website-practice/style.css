@@ -11,8 +11,10 @@ body {
     display: flex;
     justify-content:space-evenly;
     background-color: antiquewhite;
+    border-radius: .25rem;
     opacity: .9;
     margin: 1%;
+    border: 3px solid rgb(225, 220, 215);
 }
 
 .navbar-brand {
@@ -59,9 +61,34 @@ footer {
     display: flex;
     flex-flow: row no-wrap;
     justify-content: center;
+    align-items: center;
     background-color: antiquewhite;
-    height: 40%;
-    width: 40%;
     opacity: .9;
-    border-radius: 2%;
+    border-radius: .25rem;
+    padding: 1rem;
+    border: 3px solid rgb(225, 220, 215);
+}
+
+#test-box{
+    background-color: white;
+    height: 100px;
+}
+
+.input-group {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+
+#fillbox {
+    display: inline;
+    width: 75%;
+    height: 3rem;
+    margin: 0;
+}
+
+#fill-button {
+    width: 24%;
+    margin: 0;
+    height: 3rem;
 }
